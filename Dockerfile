@@ -3,10 +3,7 @@ LABEL Maintainer="Alex Sharkov <blade.didan@gmail.com>"
 
 # Install git and ssh.
 RUN apt-get update -qq \
-    && apt-get install -y git ssh lsof zip unzip vim lynx curl aspell-en jq imagemagick libmagickwand-dev rsync sudo wget \
-    && docker-php-ext-install mysqli \
-      && docker-php-ext-install pdo \
-      && docker-php-ext-install pdo_mysql
+    && apt-get install -y git ssh lsof zip unzip vim lynx curl aspell-en jq imagemagick libmagickwand-dev rsync sudo wget
 
 RUN git --version \
     && ssh -V \
@@ -52,7 +49,7 @@ RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh
   && . $HOME/.nvm/nvm.sh \
   && nvm --version
 
-ENV SHIPPABLE_NODE_VERSION=v10.15.3
+ENV SHIPPABLE_NODE_VERSION=v8.9.1
 RUN . $HOME/.nvm/nvm.sh \
 	&& nvm install $SHIPPABLE_NODE_VERSION \
 	&& nvm alias default $SHIPPABLE_NODE_VERSION \
