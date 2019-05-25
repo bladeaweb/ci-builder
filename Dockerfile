@@ -49,7 +49,7 @@ RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh
   && . $HOME/.nvm/nvm.sh \
   && nvm --version
 
-ENV SHIPPABLE_NODE_VERSION=v8.9.1
+ENV SHIPPABLE_NODE_VERSION=v10.15.3
 RUN . $HOME/.nvm/nvm.sh \
 	&& nvm install $SHIPPABLE_NODE_VERSION \
 	&& nvm alias default $SHIPPABLE_NODE_VERSION \
