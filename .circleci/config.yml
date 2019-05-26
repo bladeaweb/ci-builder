@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: php:7.1-cli
+      - image: php:7.2-cli
         environment:
           GOSS_FILES_STRATEGY: cp
     working_directory: ~/repo
