@@ -149,5 +149,5 @@ RUN curl -L -o /tmp/cloudflared.tgz https://bin.equinox.io/c/VdrWdbjqyF/cloudfla
     && mkdir -p /tmp/cloudflared && tar -xz -C /tmp/cloudflared -f /tmp/cloudflared.tgz \
     && mv /tmp/cloudflared/cloudflared /usr/local/bin \
     && chmod +x /usr/local/bin/cloudflared \
-    && cloudflared -v
+    && cloudflared -v \
     && rm -Rf /tmp/cloudflared
