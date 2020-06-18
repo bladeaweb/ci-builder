@@ -143,3 +143,11 @@ RUN curl -L https://github.com/ahoy-cli/ahoy/releases/download/2.0.0/ahoy-bin-`u
 # Some frameworks may require presence of pygmy to run, but pygmy is not required in CI container.
 RUN touch /usr/local/bin/pygmy \
  && chmod +x /usr/local/bin/pygmy
+
+# Install cloudflared.
+RUN curl -L -o /tmp/cloudflared.tgz https://bin.equinox.io/c/VdrWdbjqyF/cloudflared-stable-linux-amd64.tgz \
+    && mkdir -p /tmp/cloudflared && tar -xz -C /tmp/cloudflared -f /tmp/cloudflared.tgz \
+    && mv /tmp/cloudflared/cloudflared /usr/local/bin \
+    && chmod +x /usr/local/bin/cloudflared \
+    && cloudflared -v
+    && rm -Rf /tmp/cloudflared
