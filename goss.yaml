@@ -160,3 +160,10 @@ command:
       - /usr/bin/lsof
     stderr: []
     timeout: 10000
+
+  which cloudflared:
+    exit-status: 0
+    stdout:
+      - /usr/local/bin/cloudflared
+    stderr: []
+    timeout: 10000
