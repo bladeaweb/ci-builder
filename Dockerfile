@@ -98,7 +98,7 @@ RUN curl -L -o /tmp/docker-18.06.1-ce.tgz https://download.docker.com/linux/stat
 
 # Install composer.
 ENV COMPOSER_ALLOW_SUPERUSER=1
-RUN curl -L -o /usr/local/bin/composer https://getcomposer.org/download/1.6.3/composer.phar \
+RUN curl -L -o /usr/local/bin/composer https://getcomposer.org/download/1.10.7/composer.phar \
     && echo "52cb7bbbaee720471e3b34c8ae6db53a38f0b759c06078a80080db739e4dcab6 /usr/local/bin/composer" | sha256sum \
     && chmod +x /usr/local/bin/composer \
     && composer --version \

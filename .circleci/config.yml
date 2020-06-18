@@ -7,6 +7,9 @@ jobs:
           GOSS_FILES_STRATEGY: cp
     working_directory: ~/repo
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "e8:99:46:24:13:bd:5a:46:6e:f8:dd:d1:31:22:ca:2c"
       - checkout
       - setup_remote_docker
       - run:
